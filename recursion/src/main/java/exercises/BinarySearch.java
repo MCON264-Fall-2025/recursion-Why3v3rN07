@@ -39,7 +39,6 @@ public class BinarySearch {
         int mid = lo + (hi - lo) / 2;
         if (a[mid] == target) return mid;
         if (target < a[mid]) return search(a, target, lo, mid - 1);
-        else if (target > a[mid]) return search(a, target, mid + 1, hi);
-        else return mid;
+        return search(a, target, mid + 1, hi);
     }
 }
