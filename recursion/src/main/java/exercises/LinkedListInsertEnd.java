@@ -14,6 +14,8 @@ package exercises;
  * - Return the (possibly new) head to make chaining easy.
  * - This mirrors many recursive list patterns you’ll use later (size, contains, printReverse).
  */
+
+//you can't just pass the node back up in the args, cause java passes references by value. so have to make a new one
 public class LinkedListInsertEnd {
 
     public static class Node<T> {
@@ -23,10 +25,12 @@ public class LinkedListInsertEnd {
     }
 
     public static <T> Node<T> insertAtEnd(Node<T> head, T value) {
-        // TODO: implement recursively
-        // Base 1: if (head == null) return new Node<>(value);
-        // Base 2: if (head.next == null) { head.next = new Node<>(value); return head; }
-        // Recursive: head.next = insertAtEnd(head.next, value); return head;
-        return head; // TEMP: replace with your recursive solution
+        if (head == null) return new Node<>(value);
+        if (head.next == null) {
+            head.next = new Node<>(value);
+            return head;
+        }
+        head.next = insertAtEnd(head.next, value);
+        return head;
     }
 }
