@@ -15,7 +15,7 @@ package exercises;
  * - This mirrors many recursive list patterns you’ll use later (size, contains, printReverse).
  */
 
-//you can't just pass the node back up in the args, cause java passes refs by value. so have to make a new one
+//you can't just pass the node back up in the args, cause java passes references by value. so have to make a new one
 public class LinkedListInsertEnd {
 
     public static class Node<T> {
